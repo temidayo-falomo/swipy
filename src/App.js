@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from "./GlobalStyles";
+import FirstPage from "./pages/first/FirstPage";
+import { Route, Routes } from "react-router-dom";
+import Second from "./pages/second/Second";
 
 function App() {
+  //Sorry i used styled components, it's totally inconsequential for now.
+  //This still definitely needs a lot improving, i want something exactly similar to the drag & hold feature IOS has.
+
+  //TODO: I planned to use AOS for a bit of "fade-left" effect, but i doubt it'd give what i want.
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle />
+      <Routes>
+        <Route path="/" element={<FirstPage />} />
+        <Route path="/second" element={<Second />} />
+      </Routes>
     </div>
   );
 }
