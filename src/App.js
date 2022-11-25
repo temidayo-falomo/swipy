@@ -14,7 +14,7 @@ function App() {
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<FirstPage />} />
-        <Route path="/second" element={<Second />} />
+        {/* <Route path="/second" element={<Second />} /> */}
       </Routes>
     </div>
   );

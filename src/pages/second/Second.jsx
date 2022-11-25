@@ -4,21 +4,31 @@ import { SecondContainer } from "./Second.styled";
 
 function Second() {
   let navigate = useNavigate();
-  const [touchStart, setTouchStart] = React.useState(false);
 
-  //When TouchStart is true, navigate backwards.
-  useEffect(() => {
-    if (touchStart) {
-      navigate("/");
+  const currWidth = window.innerWidth;
+
+  //i
+  const [touchStart, setTouchStart] = React.useState(currWidth);
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    console.log(e.targetTouches[0].clientX);
+
+    // if (e.targetTouches[0].clientY > 0) {
+    //   setTouchStart(currWidth);
+    // }
+
+    if (e.targetTouches[0].clientX < 290) {
+      setTouchStart(0);
     }
-  }, [touchStart]);
+  };
 
   return (
     <SecondContainer
       onTouchMove={(e) => {
-        //Touchstart is set to true using DOM "onTouchMove"
-        setTouchStart(true);
+        handleTouchStart(e);
       }}
+      touchStart={touchStart}
     >
       <h1>Hi, I Am Solution Page, swipe to go back.</h1>
     </SecondContainer>
