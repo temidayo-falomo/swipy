@@ -14,9 +14,9 @@ function Second() {
     setTouchStart(e.targetTouches[0].clientX);
     console.log(e.targetTouches[0].clientX);
 
-    // if (e.targetTouches[0].clientY > 0) {
-    //   setTouchStart(currWidth);
-    // }
+    if (e.targetTouches[0].clientY > 0) {
+      setTouchStart(currWidth);
+    }
 
     if (e.targetTouches[0].clientX < 290) {
       setTouchStart(0);
