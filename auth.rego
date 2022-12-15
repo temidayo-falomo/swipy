@@ -7,8 +7,8 @@ default allow = false
 allow {
   {"name": input.name,"groupname": input.groupname} = data.geostore.usergroup[_]
   input.request_path = ["v1", "collection"]
-  input.company = "Kaufman Scott LLC"
-  input.request_method = "GET"
-  input.groupname = "everyone"
+  input.company = ""
+  input.request_method = "POST"
+  input.groupname = "VIEWER"
 }
 
